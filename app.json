@@ -13,7 +13,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": ["android", "ios"],
+    "platforms": [
+      "android",
+      "ios"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -28,12 +31,22 @@
       [
         "expo-asset",
         {
-          "assets": ["./assets/images/placeholder.png"]
+          "assets": [
+            "./assets/images/placeholder.png"
+          ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "359e5468-9481-4124-b8c0-3a9a966b5485"
+      }
     }
   }
 }
