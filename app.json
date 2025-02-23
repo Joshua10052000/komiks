@@ -13,10 +13,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": [
-      "android",
-      "ios"
-    ],
+    "platforms": ["android", "ios"],
     "ios": {
       "supportsTablet": true
     },
@@ -24,16 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.joshua1005.komiks",
+      "permissions": ["android.permissions.INTERNET"]
     },
     "plugins": [
       "expo-router",
       [
         "expo-asset",
         {
-          "assets": [
-            "./assets/images/placeholder.png"
-          ]
+          "assets": ["./assets/images/placeholder.png"]
         }
       ]
     ],
