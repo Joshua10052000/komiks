@@ -22,8 +22,8 @@ Make sure you have the following installed:
 1. Clone the repository:
 
 ```
-git clone https://github.com/Joshua10052000/komiks.git &&
-cd Komiks
+git clone https://github.com/Joshua10052000/komiks
+cd komiks
 ```
 
 2. Install dependencies:
