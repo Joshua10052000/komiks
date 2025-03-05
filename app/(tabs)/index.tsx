@@ -65,7 +65,7 @@ const HomeTab = () => {
           <View style={sectionStyles.container}>
             <Text
               style={{
-                fontWeight: "bold",
+                fontWeight: "900",
               }}
             >
               {section.title}

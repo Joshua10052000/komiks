@@ -93,6 +93,7 @@ const createStyles = (windowDimensions: ScaledSize, theme: Theme) => ({
     },
     title: {
       fontSize: styles.sizes[3],
+      fontWeight: "600",
       textAlign: "center",
     },
   }),
