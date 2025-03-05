@@ -15,17 +15,13 @@ const RootLayout = () => {
   const colorScheme = useColorScheme();
   const [queryClient] = useState(() => new QueryClient());
 
-  const colors = useMemo(
-    () => getColors(colorScheme === "dark"),
-    [colorScheme]
-  );
   const theme = useMemo(
     () => ({
-      colors,
+      colors: getColors(colorScheme === "dark"),
       dark: colorScheme === "dark",
       fonts: DefaultTheme.fonts,
     }),
-    [colors]
+    [colorScheme]
   );
 
   useEffect(() => {
