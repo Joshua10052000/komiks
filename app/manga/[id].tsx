@@ -22,7 +22,6 @@ const MangaDetailsScreen = () => {
   const mangaFeedsQuery = useMangaFeedsQuery(searchParams.id, {
     order: { chapter: "asc" },
     includes: ["scanlation_group"],
-    translatedLanguage: ["en"],
   });
   const mangaQuery = useMangaQuery(searchParams.id, {
     includes: ["cover_art"],
