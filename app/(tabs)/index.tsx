@@ -16,13 +16,11 @@ import { MangasFlatList } from "@/components/mangas-flatlist";
 const HomeTab = () => {
   const theme = useTheme();
   const featuredMangaQuery = useMangasQuery({
-    originalLanguage: ["ko-ro", "ko"],
     order: { rating: "desc" },
     includes: ["cover_art"],
   });
 
   const popularMangaQuery = useMangasQuery({
-    originalLanguage: ["ko-ro", "ko"],
     order: { followedCount: "desc" },
     includes: ["cover_art"],
   });

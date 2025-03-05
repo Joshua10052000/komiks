@@ -28,7 +28,6 @@ const ExploreTab = () => {
   const queries = searchParams.query
     ? JSON.parse(searchParams.query)
     : {
-        originalLanguage: ["ko-ro", "ko"],
         includes: ["cover_art"],
         order: { latestUploadedChapter: "desc" },
       };
