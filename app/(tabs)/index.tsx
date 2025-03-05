@@ -1,17 +1,12 @@
 import { useCallback, useMemo } from "react";
 import { Theme, useTheme } from "@react-navigation/native";
 import { useMangasQuery } from "@/hooks/mangadex/use-mangas-query";
-import {
-  SectionList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { SectionList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import styles from "@/constants/styles";
 import { BannersFlatList } from "@/components/banners-flatlist";
 import { MangasFlatList } from "@/components/mangas-flatlist";
+import { Text } from "@/components/ui/text";
 
 const HomeTab = () => {
   const theme = useTheme();
@@ -76,7 +71,11 @@ const HomeTab = () => {
               {section.title}
             </Text>
             <TouchableOpacity style={sectionStyles.button}>
-              <Entypo name="chevron-right" size={styles.sizes[4]} />
+              <Entypo
+                name="chevron-right"
+                color={theme.colors.text}
+                size={styles.sizes[4]}
+              />
             </TouchableOpacity>
           </View>
         );

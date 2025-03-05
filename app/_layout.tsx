@@ -1,5 +1,5 @@
 import * as ExpoNetwork from "expo-network";
-import { Text, useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { Stack } from "expo-router/stack";
 import { StatusBar } from "expo-status-bar";
@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import getColors from "@/constants/colors";
+import { Text } from "@/components/ui/text";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();

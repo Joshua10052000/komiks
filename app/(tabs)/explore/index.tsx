@@ -7,16 +7,11 @@ import {
 } from "expo-router";
 import { useMangasQuery } from "@/hooks/mangadex/use-mangas-query";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  FlatList,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { MangaCard } from "@/components/manga-card";
 import { MangasQuerySchema } from "@/lib/zod";
 import styles from "@/constants/styles";
+import { TextInput } from "@/components/ui/text-input";
 
 interface SearchParams extends UnknownOutputParams {
   query: string;
@@ -84,8 +79,8 @@ const ExploreHeader = () => {
     <View style={[headerStyles.searchContainer, { flexGrow: 1 }]}>
       <TextInput
         value={searchText}
+        style={{ paddingRight: styles.sizes[14] }}
         onChangeText={setSearchText}
-        style={headerStyles.searchInput}
         placeholder="Search..."
       />
       <TouchableOpacity
@@ -117,18 +112,6 @@ const createStyles = (theme: Theme) => ({
     searchContainer: {
       position: "relative",
       overflow: "hidden",
-    },
-    searchInput: {
-      borderStyle: "solid",
-      borderLeftWidth: 1,
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
-      borderColor: theme.colors.border,
-      borderTopLeftRadius: styles.sizes[2],
-      borderBottomLeftRadius: styles.sizes[2],
-      paddingLeft: styles.sizes[4],
-      paddingRight: styles.sizes[10],
-      paddingVertical: styles.sizes[2],
     },
     searchButton: {
       backgroundColor: theme.colors.primary,

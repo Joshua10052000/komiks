@@ -6,12 +6,13 @@ import {
   useLocalSearchParams,
   useRouter,
 } from "expo-router";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Pressable, View } from "react-native";
 import { BannerImage } from "@/components/banner-image";
 import { Chapter, Manga } from "@/types/mangadex";
 import Markdown from "react-native-markdown-display";
 import styles from "@/constants/styles";
 import { useTheme } from "@react-navigation/native";
+import { Text } from "@/components/ui/text";
 
 interface SearchParams extends UnknownOutputParams {
   id: string;
@@ -60,6 +61,7 @@ interface MangaDetailsHeader {
 }
 
 const MangaDetailsHeader = ({ manga }: MangaDetailsHeader) => {
+  const theme = useTheme();
   const foundCover = manga.relationships.find(
     (relationship) => relationship.type === "cover_art"
   );
@@ -86,7 +88,9 @@ const MangaDetailsHeader = ({ manga }: MangaDetailsHeader) => {
       >
         <View>
           <Text style={{ fontSize: styles.sizes[6], fontWeight: "900" }}>
-            {manga.attributes.title.en}
+            {manga.attributes.title.en
+              ? manga.attributes.title.en
+              : manga.attributes.title["ja-ro"]}
           </Text>
           <Text style={{ fontSize: styles.sizes[4] }}>
             {
@@ -97,7 +101,14 @@ const MangaDetailsHeader = ({ manga }: MangaDetailsHeader) => {
             }
           </Text>
         </View>
-        <Markdown>{manga.attributes.description.en}</Markdown>
+        <Markdown
+          style={{
+            body: { color: theme.colors.text },
+            link: { color: theme.colors.primary, textDecorationLine: "none" },
+          }}
+        >
+          {manga.attributes.description.en}
+        </Markdown>
       </View>
     </View>
   );

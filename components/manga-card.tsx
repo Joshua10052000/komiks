@@ -2,7 +2,6 @@ import {
   Pressable,
   ScaledSize,
   StyleSheet,
-  Text,
   useWindowDimensions,
   View,
 } from "react-native";
@@ -12,6 +11,7 @@ import { useCallback } from "react";
 import { useRouter } from "expo-router";
 import { Theme, useTheme } from "@react-navigation/native";
 import styles from "@/constants/styles";
+import { Text } from "@/components/ui/text";
 
 interface MangaCardProps {
   manga: Manga;
@@ -49,25 +49,6 @@ const MangaCard = ({ manga }: MangaCardProps) => {
           source={image}
           placeholder={require("@/assets/images/placeholder.png")}
         />
-        <View style={itemStyles.statusContainer}>
-          <Text
-            style={[
-              {
-                color:
-                  manga.attributes.status === "cancelled"
-                    ? "black"
-                    : manga.attributes.status === "completed"
-                    ? "green"
-                    : manga.attributes.status == "hiatus"
-                    ? "red"
-                    : theme.colors.primary,
-              },
-              itemStyles.status,
-            ]}
-          >
-            {manga.attributes.status}
-          </Text>
-        </View>
       </View>
       <Text
         style={itemStyles.title}
