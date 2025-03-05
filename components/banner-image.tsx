@@ -21,7 +21,6 @@ const BannerImage = ({ imageUrl }: BannerImageProps) => {
     onError: (error) => {
       console.error(error);
     },
-    maxWidth: windowDimensions.width,
   });
   const { itemStyles } = createStyles(windowDimensions);
 

@@ -43,7 +43,7 @@ interface ChapterDetailsItemProps {
 
 const ChapterDetailsItem = ({ imageUrl }: ChapterDetailsItemProps) => {
   const windowDimensions = useWindowDimensions();
-  const image = useImage(imageUrl, { maxWidth: windowDimensions.width });
+  const image = useImage(imageUrl);
   const aspectRatio = image ? image.width / image.height : 1;
   const calculatedHeight = windowDimensions.width / aspectRatio;
 
