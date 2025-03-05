@@ -13,7 +13,12 @@ const TextInput = React.forwardRef<
   const { textInput } = createStyles(theme);
 
   return (
-    <ReactNative.TextInput style={[textInput, style]} ref={ref} {...props} />
+    <ReactNative.TextInput
+      style={[textInput, style]}
+      placeholderTextColor={theme.colors.text}
+      ref={ref}
+      {...props}
+    />
   );
 });
 
