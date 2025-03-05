@@ -13,6 +13,7 @@ import Markdown from "react-native-markdown-display";
 import styles from "@/constants/styles";
 import { useTheme } from "@react-navigation/native";
 import { Text } from "@/components/ui/text";
+import country from "@/constants/country";
 
 interface SearchParams extends UnknownOutputParams {
   id: string;
@@ -121,9 +122,6 @@ interface MangaDetailsItemProps {
 const MangaDetailsItem = ({ chapter }: MangaDetailsItemProps) => {
   const router = useRouter();
   const theme = useTheme();
-  const foundScanlationGroup = chapter.relationships.find(
-    (relationship) => relationship.type === "scanlation_group"
-  );
 
   const handlePress = useCallback(() => {
     router.push({ pathname: "/chapter/[id]", params: { id: chapter.id } });
@@ -154,8 +152,11 @@ const MangaDetailsItem = ({ chapter }: MangaDetailsItemProps) => {
           {chapter.attributes.title}
         </Text>
       </View>
-      <Text style={{ fontWeight: "500" }}>
-        {foundScanlationGroup?.attributes?.name}
+      <Text>
+        {
+          // @ts-ignore
+          country[chapter.attributes.translatedLanguage]
+        }
       </Text>
     </Pressable>
   );
